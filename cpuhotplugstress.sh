@@ -4,7 +4,8 @@
 #
 # Andrew Davis <afd@ti.com>
 
-up_cores=("0" "1" "2" "3") # Cores all start on
+core_count=$(nproc --all)
+up_cores=($(seq 0 $((core_count-1)))) # Cores all start on
 down_cores=()
 
 online_file="/sys/devices/system/cpu/cpu{0}/online"

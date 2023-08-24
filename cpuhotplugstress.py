@@ -5,8 +5,10 @@
 # Andrew Davis <afd@ti.com>
 
 import random
+import os
 
-up_cores = [0, 1, 2, 3]  # Cores all start on
+core_count = os.cpu_count()
+up_cores = list(range(core_count))  # Cores all start on
 down_cores = []
 
 online_file = '/sys/devices/system/cpu/cpu{0}/online'
