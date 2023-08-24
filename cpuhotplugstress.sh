@@ -2,7 +2,7 @@
 #
 # Stress test CPU hotplug
 #
-# Andrew F. Davis <afd@ti.com>
+# Andrew Davis <afd@ti.com>
 
 up_cores=("0" "1" "2" "3") # Cores all start on
 down_cores=()

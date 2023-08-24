@@ -2,7 +2,7 @@
 #
 # Stress test CPU hotplug
 #
-# Andrew F. Davis <afd@ti.com>
+# Andrew Davis <afd@ti.com>
 
 import random
 
@@ -14,7 +14,7 @@ online_file = '/sys/devices/system/cpu/cpu{0}/online'
 
 def core_change(core, direction):
     print("{0} core {1}".format("Starting" if direction == 'up' else "Stopping", core))
-    f = open(online_file.format(core), 'r+', 0)
+    f = open(online_file.format(core), 'r+')
     target_value = '1' if direction == 'up' else '0'
     f.write(target_value)  # Bring core up/down
     f.seek(0)
